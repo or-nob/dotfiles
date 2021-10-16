@@ -23,28 +23,38 @@ Plugin 'dense-analysis/ale'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'chriskempson/base16-vim'
 Plugin 'machakann/vim-highlightedyank'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
 
-" line over and under the cursor
+" Line over and under the cursor
 set so=10
 
-" set relative line numbers
+" Set relative line numbers
 set number relativenumber
 set nu rnu
 
-" fixes cursor lag
+" Fixes cursor lag
 set ttimeoutlen=100
 
-" show search count (only works in vim 8.0+)
+" Show search count (only works in vim 8.0+)
 set shortmess-=S
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" Show command while typing
+set showcmd
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+let base16colorspace=256
 
 " Searching better
 set ignorecase
@@ -52,11 +62,11 @@ set smartcase
 set hlsearch
 set incsearch 
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+" Use spaces instead of tabs
+set expandtab
 
 " 1 tab == 4 spaces
-" set shiftwidth=4
+set shiftwidth=4
 set tabstop=4
 
 " Allow mouse clicks
@@ -64,6 +74,76 @@ set mouse=a
 
 " Config backspace to behave normally
 set backspace=indent,eol,start
+
+" Set internal encoding of vim
+set encoding=utf-8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" TextEdit might fail if hidden is not set.
+set hidden
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+
+" For regular expressions turn magic on
+set magic
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Very magic by default
+nnoremap ? ?\v
+nnoremap / /\v
+cnoremap %s/ %sm/
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" clipboard shortcut
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Toggle between two buffers
+map <silent> <leader><leader> <c-^>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Parenthesis/bracket
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap ( <esc>`>a)<esc>`<i(<esc>
+vnoremap [ <esc>`>a]<esc>`<i[<esc>
+vnoremap { <esc>`>a}<esc>`<i{<esc>
+vnoremap " <esc>`>a"<esc>`<i"<esc>
+vnoremap ' <esc>`>a'<esc>`<i'<esc>
+vnoremap ` <esc>`>a`<esc>`<i`<esc>
+
+" Map auto complete of (, ", ', [
+inoremap ( ()<esc>i
+inoremap [ []<esc>i
+inoremap { {}<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CursorShape for TMUX with iTerm
