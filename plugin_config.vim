@@ -51,7 +51,7 @@ map <leader>g :Ack
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
+" let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
 
@@ -70,3 +70,60 @@ map <leader>nf :NERDTreeFind<cr>
 " => vim-rooter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-clang-format
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" On my mac had to spell out the complete clang-format path
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! ClangFormat()
+	let g:clang_format#style_options = {
+				\ "AccessModifierOffset" : -4,
+				\ "AllowShortIfStatementsOnASingleLine" : "true",
+				\ "AlwaysBreakTemplateDeclarations" : "true",
+				\ "Standard" : "C++11"}
+    let g:clang_format#command='/usr/local/bin/clang-format'
+    let g:clang_format#auto_format=1
+endfunction
+
+augroup CCppGroup
+    au!
+    au BufEnter,BufNewFile *.c,*.cc,*.h,*.hpp,*.hh,*.cpp call ClangFormat()
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ale (syntax checker and linter)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:ale_linters = {
+" \   'javascript': ['jshint'],
+" \   'python': ['flake8'],
+" \   'go': ['go', 'golint', 'errcheck']
+" \}
+
+nmap <silent> <leader>a <Plug>(ale_next_wrap)
+
+" Disabling highlighting
+let g:ale_set_highlights = 0
+
+" Only run linting when saving the file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_c_parse_makefile = 1
+nnoremap <leader>ad :ALEGoToDefinition<cr>
+nnoremap <leader>ar :ALEFindReferences<cr>
+nnoremap <leader>av :ALEGoToDefinitionInVSplit<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => base16 colorscheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" making colorscheme work inside tmux
+set termguicolors
+colorscheme base16-gruvbox-dark-hard
+" t_col=256
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-highlightedyank
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:highlightedyank_highlight_duration = 500
