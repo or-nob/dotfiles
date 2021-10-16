@@ -302,9 +302,9 @@ let g:highlightedyank_highlight_duration = 500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-g>a :Git add .<cr>
-nnoremap <C-g>c :Git commit<cr>
-nnoremap <C-g>p :Git push<cr>
+noremap <C-g>a :Git add .<cr>
+noremap <C-g>c :Git commit<cr>
+noremap <C-g>p :Git push<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-gitgutter
@@ -321,5 +321,5 @@ function! GitGutterOff()
     call gitgutter#disable()
 endfunction
 
-nnoremap <C-o>o :call GitGutterOn()<cr>
-nnoremap <C-o>n :call GitGutterOff()<cr>
+noremap <C-o>o :call GitGutterOn()<cr>
+noremap <C-o>n :call GitGutterOff()<cr>
