@@ -330,3 +330,4 @@ noremap <C-o>n :call GitGutterOff()<cr>
 " let g:lsp_cxx_hl_log_file = '/tmp/vim-lsp-cxx-hl.log'
 " let g:lsp_cxx_hl_verbose_log = 1
 let g:lsp_cxx_hl_use_text_props = 1
+hi default LspCxxHlGroupMemberVariable ctermfg=121 guifg=#87FFAF cterm=none gui=none
