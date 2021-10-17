@@ -27,6 +27,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'jackguo380/vim-lsp-cxx-highlight'
 
 call vundle#end()
 filetype plugin indent on
