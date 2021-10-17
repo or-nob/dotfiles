@@ -81,7 +81,7 @@ noremap <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-rooter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', 'package.json']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -323,3 +323,10 @@ endfunction
 
 noremap <C-o>o :call GitGutterOn()<cr>
 noremap <C-o>n :call GitGutterOff()<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-lsp-cxx-highlight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:lsp_cxx_hl_log_file = '/tmp/vim-lsp-cxx-hl.log'
+" let g:lsp_cxx_hl_verbose_log = 1
+let g:lsp_cxx_hl_use_text_props = 1

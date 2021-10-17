@@ -27,12 +27,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'jackguo380/vim-lsp-cxx-highlight'
 
 call vundle#end()
 filetype plugin indent on
 
 " Line over and under the cursor
-set so=10
+set so=5
 
 " Set relative line numbers
 set number relativenumber
@@ -174,3 +175,4 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+
