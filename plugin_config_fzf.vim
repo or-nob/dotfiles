@@ -66,4 +66,5 @@ autocmd VimEnter *
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--info=inline']}, <bang>0)
 
-command! -bang -nargs=? GFiles call fzf#vim#gitfiles('?', { 'down' : '60%', 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-n:preview-up,ctrl-m:preview-down' }, <bang>1)
+command! -bang -nargs=? GFiles 
+    \  call fzf#vim#gitfiles('?', { 'down' : '60%', 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-n:preview-up,ctrl-m:preview-down' }, <bang>1)

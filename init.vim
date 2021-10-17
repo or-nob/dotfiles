@@ -119,8 +119,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " clipboard shortcut
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
