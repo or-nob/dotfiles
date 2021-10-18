@@ -28,6 +28,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'jackguo380/vim-lsp-cxx-highlight'
+Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()
 filetype plugin indent on
