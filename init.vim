@@ -29,6 +29,7 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'jackguo380/vim-lsp-cxx-highlight'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'wojciechkepka/vim-github-dark'
 
 call vundle#end()
 filetype plugin indent on
@@ -109,6 +110,10 @@ set magic
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Sane splits
+set splitright
+set splitbelow
+
 " Very magic by default
 nnoremap ? ?\v
 nnoremap / /\v
@@ -133,16 +138,32 @@ map <silent> <leader><leader> <c-^>
 " Toggle between two buffers
 map <silent> <leader>z :vsplit<cr>
 
+" Settings needed for .lvimrc (Local vimrc)
+set exrc
+set secure
+
+" Permanent undo
+set undodir=~/.vimdid
+set undofile
+
+" Decent wildmenu
+set wildmenu
+set wildmode=list:longest
+set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Jump to last edit position on opening file
+if has("autocmd")
+  " https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
+  au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vnoremap ( <esc>`>a)<esc>`<i(<esc>
-" vnoremap [ <esc>`>a]<esc>`<i[<esc>
-" vnoremap { <esc>`>a}<esc>`<i{<esc>
-" vnoremap " <esc>`>a"<esc>`<i"<esc>
-" vnoremap ' <esc>`>a'<esc>`<i'<esc>
-" vnoremap ` <esc>`>a`<esc>`<i`<esc>
-
 " Map auto complete of (, ", ', [
 inoremap ( ()<esc>i
 inoremap [ []<esc>i

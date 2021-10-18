@@ -41,9 +41,9 @@ let g:fzf_colors =
 "   'previous-history' instead of 'down' and 'up'.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-" autocmd! FileType fzf
-" autocmd  FileType fzf set laststatus=0 noshowmode noruler
-"  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0
+ \| autocmd BufLeave <buffer> set laststatus=2
 
 noremap <silent> <C-f> :FZF<CR>
 noremap <silent> <leader>g :GFiles<CR>
@@ -56,9 +56,6 @@ map <silent> <leader>s :Ag<CR>
 map <leader>s<leader> :Ag 
 
 " query, ag options, fzf#run options, fullscreen
-"'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>)
-" ag --no-group --column --color --recurse --depth=100 -- 'with' .
-" 'ag --no-group --column --color --recurse --skip-vcs-ignore -- '.shellescape(<q-args>)
 autocmd VimEnter *
 \ command! -bang -nargs=* Ag
 \ call fzf#vim#ag(<q-args>, { 'down' : '60%', 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
@@ -67,4 +64,7 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--info=inline']}, <bang>0)
 
 command! -bang -nargs=? GFiles 
-    \  call fzf#vim#gitfiles('?', { 'down' : '60%', 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-m:preview-up,ctrl-n:preview-down' }, <bang>1)
+    \  call fzf#vim#gitfiles(<q-args>, { 'down' : '60%', 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-m:preview-up,ctrl-n:preview-down' }, <bang>1)
+
+command! -bang -nargs=? -complete=dir Buffers
+    \ call fzf#vim#buffers(<q-args>, { 'down' : '20%', 'options': ['--info=inline']}, <bang>0)
