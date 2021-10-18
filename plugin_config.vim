@@ -136,10 +136,11 @@ nnoremap <leader>ah :ALEHover<cr>
 " making colorscheme work inside tmux
 
 set termguicolors
-colorscheme base16-gruvbox-dark-hard
 if &term == "screen"
-    t_Co=256
+    set t_Co=256
+    set t_ut=
 endif
+colorscheme base16-gruvbox-dark-hard
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-highlightedyank
@@ -283,16 +284,6 @@ nnoremap <leader>ar :ALEFindReferences<cr>
 nnoremap <leader>av :ALEGoToDefinitionInVSplit<cr>
 nnoremap <leader>ah :ALEHover<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => base16 colorscheme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" making colorscheme work inside tmux
-
-set termguicolors
-colorscheme base16-gruvbox-dark-hard
-if &term == "screen"
-    t_Co=256
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-highlightedyank
@@ -330,3 +321,5 @@ noremap <C-o>n :call GitGutterOff()<cr>
 " let g:lsp_cxx_hl_log_file = '/tmp/vim-lsp-cxx-hl.log'
 " let g:lsp_cxx_hl_verbose_log = 1
 let g:lsp_cxx_hl_use_text_props = 1
+hi default LspCxxHlGroupMemberVariable ctermfg=121 guifg=#87FFAF cterm=none gui=none
+noremap <C-h>o :LspCxxHighlight<cr>
