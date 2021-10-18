@@ -136,12 +136,12 @@ map <silent> <leader>z :vsplit<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap ( <esc>`>a)<esc>`<i(<esc>
-vnoremap [ <esc>`>a]<esc>`<i[<esc>
-vnoremap { <esc>`>a}<esc>`<i{<esc>
-vnoremap " <esc>`>a"<esc>`<i"<esc>
-vnoremap ' <esc>`>a'<esc>`<i'<esc>
-vnoremap ` <esc>`>a`<esc>`<i`<esc>
+" vnoremap ( <esc>`>a)<esc>`<i(<esc>
+" vnoremap [ <esc>`>a]<esc>`<i[<esc>
+" vnoremap { <esc>`>a}<esc>`<i{<esc>
+" vnoremap " <esc>`>a"<esc>`<i"<esc>
+" vnoremap ' <esc>`>a'<esc>`<i'<esc>
+" vnoremap ` <esc>`>a`<esc>`<i`<esc>
 
 " Map auto complete of (, ", ', [
 inoremap ( ()<esc>i
