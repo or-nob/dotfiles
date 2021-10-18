@@ -130,6 +130,9 @@ map <silent> <leader><cr> :noh<cr>
 " Toggle between two buffers
 map <silent> <leader><leader> <c-^>
 
+" Toggle between two buffers
+map <silent> <leader>z :vsplit<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

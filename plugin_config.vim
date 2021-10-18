@@ -295,7 +295,7 @@ let g:highlightedyank_highlight_duration = 500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <C-g>a :Git add .<cr>
 noremap <C-g>c :Git commit<cr>
-noremap <C-g>p :Git push<cr>
+noremap <C-g>p :Git push origin 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-gitgutter
