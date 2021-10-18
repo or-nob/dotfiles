@@ -95,7 +95,7 @@ function! ClangFormat()
 				\ "AllowShortIfStatementsOnASingleLine" : "true",
 				\ "AlwaysBreakTemplateDeclarations" : "true",
 				\ "Standard" : "C++11"}
-    let g:clang_format#command='/usr/local/bin/clang-format'
+    let g:clang_format#command='clang-format-6.0'
     let g:clang_format#auto_format=1
 endfunction
 
