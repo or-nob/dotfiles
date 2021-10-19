@@ -83,7 +83,6 @@ noremap <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', 'package.json']
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-clang-format
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,5 +178,5 @@ noremap <C-o>n :call GitGutterOff()<cr>
 " let g:lsp_cxx_hl_log_file = '/tmp/vim-lsp-cxx-hl.log'
 " let g:lsp_cxx_hl_verbose_log = 1
 let g:lsp_cxx_hl_use_text_props = 1
-hi default LspCxxHlGroupMemberVariable ctermfg=121 guifg=#87FFAF cterm=none gui=none
+hi default LspCxxHlGroupMemberVariable ctermfg=67 guifg=#5F87AF cterm=none gui=none
 noremap <C-h>o :LspCxxHighlight<cr>

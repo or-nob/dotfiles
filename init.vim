@@ -189,6 +189,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CursorShape for Gnome-Terminal
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
   au InsertEnter,InsertChange *
@@ -199,3 +200,4 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+
