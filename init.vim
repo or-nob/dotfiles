@@ -35,7 +35,11 @@ call vundle#end()
 filetype plugin indent on
 
 " Line over and under the cursor
-set so=10
+if has("mac")
+    set so=10
+elseif has("linux")
+    set so=5
+end
 
 " Set relative line numbers
 set number relativenumber
