@@ -105,6 +105,26 @@ augroup CCppGroup
     au BufEnter,BufNewFile *.c,*.cc,*.h,*.hpp,*.hh,*.cpp call ClangFormat()
 augroup END
 
+" We do this to stop cursor from going to the top of the file after undo
+" Idea taken from: https://github.com/rhysd/vim-clang-format/issues/8
+function! ClangFormatSafeUndo()
+    let s:pos = getpos('.')
+    let s:view = winsaveview()        
+    undo
+    call setpos('.', s:pos)
+    call winrestview(s:view)
+endfunc
+
+function! ClangFormatSafeRedo()
+    let s:pos = getpos('.')
+    let s:view = winsaveview()        
+    redo
+    call setpos('.', s:pos)
+    call winrestview(s:view)
+endfunc
+nnoremap u :call ClangFormatSafeUndo()<cr>
+nnoremap <C-r> :call ClangFormatSafeRedo()<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
