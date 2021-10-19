@@ -94,7 +94,9 @@ function! ClangFormat()
 				\ "AccessModifierOffset" : -4,
 				\ "AllowShortIfStatementsOnASingleLine" : "true",
 				\ "AlwaysBreakTemplateDeclarations" : "true",
-				\ "Standard" : "C++11"}
+				\ "Standard" : "C++11",
+                \ "ColumnLimit": 80}
+
     let g:clang_format#command='clang-format-6.0'
     let g:clang_format#auto_format=1
 endfunction
