@@ -96,7 +96,11 @@ function! ClangFormat()
 				\ "AlwaysBreakTemplateDeclarations" : "true",
 				\ "Standard" : "C++11",
                 \ "ColumnLimit": 80}
-    let g:clang_format#command='clang-format-6.0'
+    if has("mac")
+        let g:clang_format#command='/usr/local/bin/clang-format'
+    elseif has("linux")
+        let g:clang_format#command='clang-format-6.0'
+    end
     let g:clang_format#auto_format=1
 endfunction
 
