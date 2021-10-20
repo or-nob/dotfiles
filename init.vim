@@ -140,8 +140,11 @@ map <silent> <leader><cr> :noh<cr>
 " Toggle between two buffers
 map <silent> <leader><leader> <c-^>
 
-" Toggle between two buffers
+" Open a vertical split
 map <silent> <leader>z :vsplit<cr>
+
+" Close a vertical split
+map <silent> <leader>x <C-w>q<cr>
 
 " Settings needed for .lvimrc (Local vimrc)
 set exrc
