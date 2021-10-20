@@ -130,31 +130,6 @@ nnoremap u :call ClangFormatSafeUndo()<cr>
 nnoremap <C-r> :call ClangFormatSafeRedo()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_linters = {
-" \   'javascript': ['jshint'],
-" \   'python': ['flake8'],
-" \   'go': ['go', 'golint', 'errcheck']
-" \}
-
-nmap <silent> <leader>an <Plug>(ale_next_wrap)
-
-" Disabling highlighting
-let g:ale_set_highlights = 0
-
-" Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_c_parse_makefile = 1
-let g:ale_floating_preview = 1
-nnoremap <leader>ad :ALEGoToDefinition<cr>
-nnoremap <leader>ai :ALEInfo<cr>
-nnoremap <leader>ar :ALEFindReferences<cr>
-nnoremap <leader>av :ALEGoToDefinitionInVSplit<cr>
-nnoremap <leader>ah :ALEHover<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => base16 colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " making colorscheme work inside tmux
