@@ -204,3 +204,14 @@ noremap <C-o>n :call GitGutterOff()<cr>
 let g:lsp_cxx_hl_use_text_props = 1
 hi default LspCxxHlGroupMemberVariable ctermfg=67 guifg=#5F87AF cterm=none gui=none
 noremap <C-h>o :LspCxxHighlight<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => DoxygenToolkit.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Mathias Lorente"
+let g:DoxygenToolkit_licenseTag="My own license"   " <-- !!! Does not end with \"\<enter>"
