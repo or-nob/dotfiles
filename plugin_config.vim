@@ -1,4 +1,7 @@
 " Plugin settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => securemodelines
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:secure_modelines_allowed_items = [
                 \ "textwidth",   "tw",
                 \ "softtabstop", "sts",

@@ -30,6 +30,7 @@ Plugin 'jackguo380/vim-lsp-cxx-highlight'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'wojciechkepka/vim-github-dark'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'ciaranm/securemodelines'
 
 call vundle#end()
 filetype plugin indent on
