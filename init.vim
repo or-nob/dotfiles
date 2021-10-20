@@ -19,7 +19,6 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-rooter'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'dense-analysis/ale'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'chriskempson/base16-vim'
 Plugin 'machakann/vim-highlightedyank'
