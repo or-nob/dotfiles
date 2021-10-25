@@ -21,7 +21,6 @@ Plugin 'airblade/vim-rooter'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'chriskempson/base16-vim'
-Plugin 'machakann/vim-highlightedyank'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -31,6 +30,7 @@ Plugin 'tomasiser/vim-code-dark'
 Plugin 'wojciechkepka/vim-github-dark'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'ciaranm/securemodelines'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -158,6 +158,12 @@ set undofile
 set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
+
+set belloff=all
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
 
 set ai "Auto indent
 set si "Smart indent
