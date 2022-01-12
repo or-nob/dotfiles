@@ -98,7 +98,7 @@ function! ClangFormat()
 				\ "AllowShortIfStatementsOnASingleLine" : "true",
 				\ "AlwaysBreakTemplateDeclarations" : "true",
 				\ "Standard" : "C++11",
-                \ "ColumnLimit": 80}
+                \ "ColumnLimit": 100}
     if has("mac")
         let g:clang_format#command='/usr/local/bin/clang-format'
     elseif has("linux")
@@ -193,3 +193,9 @@ let g:DoxygenToolkit_blockHeader="----------------------------------------------
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="TigerIT Bangladesh Ltd"
 let g:DoxygenToolkit_licenseTag="My own license"   " <-- !!! Does not end with \"\<enter>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => man.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+runtime ftplugin/man.vim
+map <leader>v :vert Man 

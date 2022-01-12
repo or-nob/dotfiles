@@ -134,6 +134,9 @@ map <C-l> <C-W>l
 noremap <leader>y "+y
 noremap <leader>p "+p
 
+" Stop paste from copying selected part into a buffer.
+xnoremap p "_dP
+
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
