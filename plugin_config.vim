@@ -98,7 +98,7 @@ function! ClangFormat()
 				\ "AllowShortIfStatementsOnASingleLine" : "true",
 				\ "AlwaysBreakTemplateDeclarations" : "true",
 				\ "Standard" : "C++11",
-                \ "ColumnLimit": 80}
+                \ "ColumnLimit": 100}
     if has("mac")
         let g:clang_format#command='/usr/local/bin/clang-format'
     elseif has("linux")
