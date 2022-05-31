@@ -31,6 +31,9 @@ Plugin 'wojciechkepka/vim-github-dark'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'ciaranm/securemodelines'
 Plugin 'junegunn/goyo.vim'
+Plugin 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 call vundle#end()
 filetype plugin indent on
