@@ -14,5 +14,3 @@ This is a vim config for working on C/C++ projects in vim. Please, note this is 
 
 Then, from vim command line:
 `:PluginInstall`<br/>
-
-PS: install clang-format for `vim-clang-format` plugin to work.

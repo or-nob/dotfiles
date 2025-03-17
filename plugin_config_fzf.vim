@@ -50,7 +50,7 @@ noremap <silent> <leader>g :GFiles<CR>
 noremap <silent> <leader>gf :GFiles?<CR>
 noremap <silent> <leader>f :Files<CR>
 noremap <silent> <leader>b :Buffers<CR>
-noremap <silent> <leader>m :Marks<CR>
+noremap <silent> <leader>e :Marks<CR>
 noremap <silent> <leader>gc :Commits<CR>
 map <silent> <leader>s :Ag<CR>
 map <leader>s<leader> :Ag 
