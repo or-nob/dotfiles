@@ -113,7 +113,7 @@ return {
         lspconfig.clangd.setup {
             cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
             init_options = {
-                fallbackFlags = { '-std=c++11' },
+                fallbackFlags = { '-std=c++17' },
             },
             capabilities = lsp_capabilities,
         }
