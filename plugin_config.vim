@@ -84,7 +84,8 @@ noremap <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-rooter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', 'package.json']
+let g:rooter_manual_only = 1
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', 'package.json', "go.mod"]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-clang-format
