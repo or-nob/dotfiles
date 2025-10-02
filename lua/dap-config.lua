@@ -99,6 +99,7 @@ return {
         dap.configurations.c = dap.configurations.cpp -- Also apply for C
 
         require("nvim-dap-virtual-text").setup()
+        require('dap-go').setup()
 
         -- Keybindings for debugging
         vim.keymap.set("n", "<F5>", function() dap.continue() end, { desc = "Start Debugging" })

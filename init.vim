@@ -45,6 +45,9 @@ Plugin 'mfussenegger/nvim-dap'
 Plugin 'rcarriga/nvim-dap-ui' " UI for debugging
 Plugin 'theHamsta/nvim-dap-virtual-text' " Show debug info inline
 Plugin 'nvim-neotest/nvim-nio'
+Plugin 'aktersnurra/no-clown-fiesta.nvim'
+Plugin 'leoluz/nvim-dap-go'
+Plugin 'jaredgorski/fogbell.vim'
 
 call vundle#end()
 filetype plugin indent on
