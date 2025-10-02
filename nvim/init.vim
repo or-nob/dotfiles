@@ -9,8 +9,8 @@ set history=500
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim_config/plugins/Vundle.vim
-call vundle#begin('$HOME/.vim_config/plugins')
+set rtp+=$HOME/.dotfiles/nvim/plugins/Vundle.vim
+call vundle#begin('$HOME/.dotfiles/nvim/plugins')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
@@ -238,6 +238,5 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
-
 
 let g:python3_host_prog = '/usr/bin/python3'

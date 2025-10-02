@@ -74,7 +74,7 @@ noremap <leader>o :BufExplorer<cr>
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', 'node_modules', 'bin']
 let g:NERDTreeWinSize=35
 noremap <leader>nn :NERDTreeToggle<cr>
@@ -84,7 +84,8 @@ noremap <leader>nf :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-rooter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:rooter_patterns = ['go.mod', '.git', 'CMakeLists.txt', 'Makefile', '*.sln', 'build/env.sh', 'package.json', 'requirements.txt', 'Cargo.toml']
+" let g:rooter_patterns = ['go.mod', '.git', 'CMakeLists.txt', 'Makefile', '*.sln', 'build/env.sh', 'package.json', 'requirements.txt', 'Cargo.toml']
+let g:rooter_patterns = ['go.mod', '.git', '*.sln', 'build/env.sh', 'package.json', 'requirements.txt', 'Cargo.toml']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-clang-format
