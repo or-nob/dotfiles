@@ -85,7 +85,7 @@ noremap <leader>nf :NERDTreeFind<cr>
 " => vim-rooter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rooter_manual_only = 1
-let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', 'package.json', "go.mod"]
+let g:rooter_patterns = ['go.mod', '.git', 'CMakeLists.txt', 'Makefile', '*.sln', 'build/env.sh', 'package.json', 'requirements.txt', 'Cargo.toml']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-clang-format
@@ -103,15 +103,15 @@ function! ClangFormat()
     if has("mac")
         let g:clang_format#command='/usr/local/bin/clang-format'
     elseif has("linux")
-        let g:clang_format#command='clang-format-6.0'
+        let g:clang_format#command='clang-format'
     end
     let g:clang_format#auto_format=1
 endfunction
 
-augroup CCppGroup
-    au!
-    au BufEnter,BufNewFile *.c,*.cc,*.h,*.hpp,*.hh,*.cpp call ClangFormat()
-augroup END
+" augroup CCppGroup
+"     au!
+"     au BufEnter,BufNewFile *.c,*.cc,*.h,*.hpp,*.hh,*.cpp call ClangFormat()
+" augroup END
 
 " We do this to stop cursor from going to the top of the file after undo
 " Idea taken from: https://github.com/rhysd/vim-clang-format/issues/8
@@ -176,13 +176,25 @@ noremap <C-o>o :call GitGutterOn()<cr>
 noremap <C-o>n :call GitGutterOff()<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-lsp-cxx-highlight
+" => copilot-nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:lsp_cxx_hl_log_file = '/tmp/vim-lsp-cxx-hl.log'
-" let g:lsp_cxx_hl_verbose_log = 1
-let g:lsp_cxx_hl_use_text_props = 1
-hi default LspCxxHlGroupMemberVariable ctermfg=67 guifg=#5F87AF cterm=none gui=none
-noremap <C-h>o :LspCxxHighlight<cr>
+let g:copilot#enabled = 1
+ 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lua plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require("plugin").setup_treesitter()
+
+require("plugin").setup_cmp()
+
+require("plugin").setup_lsp()
+
+require'dap-config'.setup()
+
+EOF
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => DoxygenToolkit.vim

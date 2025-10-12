@@ -19,18 +19,29 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-rooter'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'chriskempson/base16-vim'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-Plugin 'jackguo380/vim-lsp-cxx-highlight'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'wojciechkepka/vim-github-dark'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'tomasiser/vim-code-dark'
+" neovim only
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plugin 'nvim-treesitter/playground'
+Plugin 'wojciechkepka/vim-github-dark'
 Plugin 'ciaranm/securemodelines'
+Plugin 'neovim/nvim-lspconfig'
+Plugin 'hrsh7th/cmp-nvim-lsp'
+Plugin 'hrsh7th/cmp-buffer'
+Plugin 'hrsh7th/cmp-path'
+"Plugin 'hrsh7th/cmp-cmdline'
+Plugin 'hrsh7th/nvim-cmp'
+Plugin 'mfussenegger/nvim-dap'
+Plugin 'rcarriga/nvim-dap-ui' " UI for debugging
+Plugin 'theHamsta/nvim-dap-virtual-text' " Show debug info inline
+Plugin 'nvim-neotest/nvim-nio'
 
 call vundle#end()
 filetype plugin indent on
@@ -150,9 +161,18 @@ map <silent> <leader>z :vsplit<cr>
 " Close a vertical split
 map <silent> <leader>x <C-w>q<cr>
 
+map <leader>m yiw :%sm/<C-R>"//g<Left><Left>
+map <leader>me :%sm/<C-R>"//g<Left><Left>
+
+""function! test()
+""    call gitgutter#enable()
+""endfunction
+
 " Settings needed for .lvimrc (Local vimrc)
 set exrc
 set secure
+
+set expandtab
 
 " Permanent undo
 set undodir=~/.vimdid
@@ -166,6 +186,7 @@ set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+set colorcolumn=120 "for linewrap
 
 " Jump to last edit position on opening file
 if has("autocmd")
@@ -212,3 +233,6 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+
+
+let g:python3_host_prog = '/usr/bin/python3'
