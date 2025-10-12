@@ -9,8 +9,8 @@ set history=500
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim_config/plugins/Vundle.vim
-call vundle#begin('$HOME/.vim_config/plugins')
+set rtp+=$HOME/.dotfiles/nvim/plugins/Vundle.vim
+call vundle#begin('$HOME/.dotfiles/nvim/plugins')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
@@ -22,7 +22,6 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'chriskempson/base16-vim'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
